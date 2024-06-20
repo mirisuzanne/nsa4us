@@ -1,0 +1,17 @@
+<label :for="this.uid" @text="this.label"></label>
+<textarea
+  :id="this.uid"
+  :name="this.name || slugify(this.label)"
+  required
+></textarea>
+
+<style>
+  text-area {
+    display: grid;
+  }
+
+  textarea {
+    field-sizing: content;
+    min-block-size: 4lh;
+  }
+</style>

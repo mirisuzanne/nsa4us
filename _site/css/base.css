@@ -1,0 +1,93 @@
+@layer reset, base;
+
+@layer base {
+  html {
+    --green: #86C232;
+    --blue: #4448AC;
+    --white: oklch(100% 0 none);
+    --black: oklch(0% 0 none);
+    --canvas-mix: var(--black);
+    --text-mix: var(--white);
+    --canvas: Canvas;
+    --text: CanvasText;
+    --title: var(--green);
+
+    --body-font: 'Roboto Flex', Verdana, sans-serif;
+    --title-font: 'Teko', Verdana, sans-serif;
+
+    accent-color: var(--green);
+    background-color: var(--canvas);
+    background-image:
+      linear-gradient(
+        to top right,
+        var(--canvas) 25%,
+        transparent
+      ),
+      url('/img/eagle.png'),
+      url('/img/cyber.jpg');
+    background-blend-mode: multiply, soft-light, normal;
+    background-size: cover, 20em, cover;
+    background-attachment: fixed, scroll, fixed;
+    color: var(--text);
+    color-scheme: dark;
+    font-family: var(--body-font);
+
+    @supports (color: color-mix(in oklch, white, light-dark(white, black))) {
+      --canvas: color-mix(in oklch, var(--blue), var(--canvas-mix) 75%);
+      --text: color-mix(in oklch, var(--blue), var(--text-mix) 75%);
+    }
+  }
+
+  body {
+    --step-0: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+    --step-1: clamp(1.6875rem, 1.5497rem + 0.6891vi, 2.0838rem);
+    --step-2: clamp(2.5313rem, 2.2035rem + 1.6389vi, 3.4736rem);
+    --step-3: clamp(3.7969rem, 3.1034rem + 3.4672vi, 5.7905rem);
+    --step-4: clamp(5.6953rem, 4.3188rem + 6.8826vi, 9.6528rem);
+
+    --text-small: var(--step-0);
+    --text-normal: var(--step-1);
+    --text-large: var(--step-2);
+    --text-xlarge: var(--step-3);
+    --gap: clamp(2cqi, 0.5lh, 5cqi);
+    font-size: var(--text-normal);
+    font-weight: 100;
+    padding: var(--gap);
+  }
+
+  h1, h2, h3 {
+    color: var(--title);
+    font-family: var(--title-font);
+    line-height: 1;
+    margin-block: 1rlh 0;
+  }
+
+  h1 { font-size: var(--text-xlarge); }
+  h2 { font-size: var(--text-large); }
+  h3 { font-size: var(--text-normal); }
+}
+
+@layer reset {
+  * { box-sizing: border-box; }
+  html { block-size: 100%; }
+
+  body {
+    margin: unset;
+    min-block-size: 100%;
+  }
+
+  picture { display: contents; }
+  img { display: block; }
+
+  img,
+  svg {
+    max-inline-size: 100%;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title @text="this.title ? `${this.title} : ${site.title}` : site.title"></title>
+
+    <link webc:keep rel="preconnect" href="https://fonts.googleapis.com">
+    <link webc:keep rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link webc:keep href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link webc:keep href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+      webc:keep
+      :href="`${site.cssPath}${style || site.style}`"
+    >
+    <style @raw="getBundle('css')" webc:keep></style>
+  </head>
+  <body>
+    <site-header></site-header>
+    <main @raw="content"></main>
+    <side-bar></side-bar>
+
+    <footer>
+      <p>Defending Our Nation [eagle] Securing Your Secrets</p>
+    </footer>
+
+    <script
+      @raw="getBundle('js')"
+      webc:keep
+    ></script>
+  </body>
+</html>
+
+<style>
+  body {
+    display: grid;
+    grid-template:
+      'h h h h' auto
+      '. m a .' 1fr
+      '. f f .' auto
+      / 1fr minmax(min-content, 30em) fit-content(15em) 1fr
+    ;
+    gap: var(--gap);
+  }
+
+  site-header { grid-area: h; }
+  main { grid-area: m; }
+  side-bar { grid-area: a; }
+  footer { grid-area: f; }
+
+  main {
+    text-shadow: 1px 1px 2px var(--canvas);
+    padding: var(--gap);
+
+    > :first-child {
+      margin-block-start: unset;
+    }
+
+    p {
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0 0.2lh,
+        var(--canvas) 0.2lh 0.8lh,
+        transparent 0.8lh 1lh
+      );
+    }
+  }
+
+</style>

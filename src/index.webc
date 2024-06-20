@@ -1,0 +1,231 @@
+<p>
+  The National Security Agency/Central Security Service
+  (NSA/CSS)
+  is home to America’s
+  <strong>codemakers</strong> and <strong>codebreakers</strong>.
+  We’ve been making and breaking
+  all your <em>dirty little secrets</em>
+  since 1952.
+  But you “citizens” keep producing secrets
+  faster than we can steal them!
+  We’ve tried everything —
+  from email intercepts and metadata mining
+  to warrantless wiretaps —
+  but it's past time we ask for help.
+</p>
+
+<h2>Do Your Part for National Security</h2>
+<p>
+  <strong>No codemaking or codebreaking experience required.</strong>
+  Simply fill out the forms below,
+  and send us all your secrets directly!
+  <strong>All fields are required by law.</strong>
+</p>
+
+<form
+  name="secrets"
+  method="POST"
+  netlify-honeypot="bot-field"
+  data-netlify="true"
+>
+  <text-field
+    @label="Name"
+  ></text-field>
+  <text-area
+    @label="AKA (also known as)"
+  ></text-area>
+  <text-field
+    @label="Email"
+    @type="email"
+  ></text-field>
+  <text-area
+    @label="Other emails (comma-separated)"
+    @type="email"
+  ></text-area>
+
+  <fieldset>
+    <legend>Physical Address</legend>
+    <text-field
+      @label="Street"
+    ></text-field>
+    <text-field
+      @label="Street Continued"
+    ></text-field>
+    <text-field
+      @label="Region / State"
+    ></text-field>
+    <text-field
+      @label="Locality / City"
+    ></text-field>
+    <text-field
+      @label="Postal Code"
+    ></text-field>
+  </fieldset>
+
+  <fieldset>
+    <legend>Social Media</legend>
+    <text-field
+      @label="Finsta"
+    ></text-field>
+    <text-field
+      @label="FetLife"
+    ></text-field>
+    <text-field
+      @label="Ashley Madison"
+    ></text-field>
+  </fieldset>
+
+  <fieldset>
+    <legend>Interest</legend>
+    <text-field
+      @label="Grade school crush"
+    ></text-field>
+    <text-field
+      @label="Celebrity crush"
+    ></text-field>
+    <text-field
+      @label="Candy crush"
+    ></text-field>
+  </fieldset>
+
+  <fieldset>
+    <legend>Activity</legend>
+    <text-area
+      @label="Previous affairs"
+    ></text-area>
+    <text-area
+      @label="Current affairs"
+    ></text-area>
+    <text-area
+      @label="Global affairs"
+    ></text-area>
+  </fieldset>
+
+  <fieldset>
+    <legend>Personality</legend>
+    <div>
+      <input type="radio" id="person-good" name="personality" required>
+      <label for="person-good">Good</label>
+    </div>
+    <div>
+      <input type="radio" id="person-bad" name="personality" required>
+      <label for="person-bad">Bad</label>
+    </div>
+    <div>
+      <input type="radio" id="person-ind" name="personality" required>
+      <label for="person-ind">Morally conflicted (still bad)</label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Access</legend>
+    <text-area
+      @label="Passwords (all of them)"
+    ></text-area>
+    <text-field
+      @label="Door Code"
+    ></text-field>
+    <text-field
+      @label="Four-digit pin no."
+    ></text-field>
+    <text-field
+      @label="Six-digit pin no."
+    ></text-field>
+    <text-field
+      @label="Social security no."
+    ></text-field>
+  </fieldset>
+
+  <text-area
+    @label="Other (describe)"
+  ></text-area>
+
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
+
+  <div class="actions">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+<p>
+  Your answers will be
+  submitted directly to the NSA/CSS
+  for further review.*
+  <strong>Thank you for your contributions</strong>.
+</p>
+
+<p>
+  <small>* maybe</small>
+</p>
+
+<style>
+  form {
+    display: grid;
+    gap: 0.5lh;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  fieldset {
+    border: thin dotted var(--green);
+    display: grid;
+    gap: inherit;
+  }
+
+  legend {
+    color: var(--green);
+    font-family: var(--title-font);
+    font-weight: bold;
+  }
+
+  text-area,
+  text-field {
+    &:focus-within label {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    &:has([required]) label::after {
+      content: '*';
+      color: var(--green);
+      font-weight: bold;
+    }
+  }
+
+  label {
+    transition: all 300ms ease;
+    text-transform: lowercase;
+  }
+
+  textarea,
+  input {
+    font: inherit;
+    padding: 0.25rem;
+    border: thin solid;
+
+    &:focus {
+      border-color: var(--green);
+      outline: thin dotted var(--green);
+      outline-offset: 2px;
+    }
+  }
+
+  button {
+    background-color: var(--green);
+    color: var(--canvas);
+    font-family: var(--title-font);
+    padding: 0 1em;
+
+    &:focus,
+    &:hover,
+    &:active {
+      font-style: italic;
+    }
+  }
+</style>

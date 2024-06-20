@@ -1,0 +1,4 @@
+<img
+  webc:is="eleventy-image"
+  :src="this.src"
+  :alt="this.alt" />

@@ -1,0 +1,83 @@
+<header>
+  <h1>NSA<b>4</b>.US</h1>
+  <p class="tagline">“If you think something, say something”</p>
+  <svg-eagle style="fill: var(--green)"></svg-eagle>
+</header>
+
+<style>
+  site-header {
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        color-mix(in oklch, var(--text), transparent 85%) 0px 2px,
+        transparent 2px 6px
+      ),
+      linear-gradient(
+        to right,
+        var(--canvas) 50%,
+        transparent
+      )
+    ;
+    border-block: thick double var(--green);
+    display: block;
+    overflow: clip;
+    padding: var(--gap);
+  }
+</style>
+
+<style webc:scoped>
+  /*
+    animations stolen from https://www.xanthir.com
+    and then updated slightly
+  */
+  @keyframes text-blur {
+    0%, 50%, 90%, 100% { filter: blur(0px); }
+    60%, 80% { filter: blur(2px); }
+    70% { filter: blur(5px); }
+  }
+  @keyframes text-blink {
+    0% { transform: skewX(0deg); }
+    20% { transform: skewX(0deg); }
+    21% { transform: skewX(-3deg); }
+    35% {
+      opacity: 1;
+      transform: skewX(0deg);
+    }
+    35.5% {
+      opacity: .3;
+      transform: skewX(70deg);
+    }
+    36% { transform: skewX(-60deg); }
+    36.5% {
+      opacity: 1;
+      transform: skewX(0deg);
+    }
+    100% { transform: skewX(0deg); }
+  }
+
+  header {
+    display: grid;
+    grid-template: 'h e' auto 't e' auto / minmax(80%, 1fr) minmax(14em, 30em);
+  }
+
+  h1, .tagline { margin: unset; }
+
+  h1 {
+    align-self: end;
+    font-weight: 900;
+  }
+
+  b, svg {
+    animation: text-blur 4s infinite, text-blink 11s infinite;
+  }
+
+  svg {
+    animation-delay: -1s;
+    block-size: auto;
+    contain: size;
+    grid-area: e;
+    inline-size: auto;
+    margin: -2lh;
+    place-self: stretch;
+  }
+</style>

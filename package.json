@@ -1,0 +1,27 @@
+{
+  "name": "nsa4us",
+  "version": "1.0.0",
+  "description": "helping the nsa do their job",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mirisuzanne/nsa4us.git"
+  },
+  "author": "Miriam Suzanne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mirisuzanne/nsa4us/issues"
+  },
+  "homepage": "https://github.com/mirisuzanne/nsa4us#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0-alpha.13",
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-plugin-webc": "^0.11.2",
+    "dotenv": "^16.4.5"
+  }
+}

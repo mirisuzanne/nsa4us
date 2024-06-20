@@ -1,0 +1,13 @@
+<label :for="this.uid" @text="this.label"></label>
+<input
+  :id="this.uid"
+  :type="this.type || 'text'"
+  :name="this.name || slugify(this.label)"
+  required
+></input>
+
+<style>
+  text-field {
+    display: grid;
+  }
+</style>

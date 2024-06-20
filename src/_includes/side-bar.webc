@@ -1,0 +1,125 @@
+<aside>
+  <h2>Inside NSA4.US</h2>
+  <p>
+    Learn more about <br>
+    <strong>What We Do</strong>
+  </p>
+  <ul>
+    <li>Don't Worry About It</li>
+    <li>Are You Hiding Something?</li>
+    <li>Trust Us</li>
+  </ul>
+</aside>
+
+<aside class="woman">
+  <h2>This Woman</h2>
+  <p>
+    Is <strong>Just Like You</strong>
+  </p>
+  <ul>
+    <li>Bad All Around</li>
+    <li>Hiding Things</li>
+    <li>Quiet Quitter</li>
+    <li>Show Us The Binder</li>
+  </ul>
+</aside>
+
+<aside>
+  <h2>What The Fuck?</h2>
+  <p>
+    You live in a police
+    surveillance state.
+    But don't worry,
+    there's also
+    <strong>Corporate Surveillance</strong>
+  </p>
+  <ul>
+    <li><a href="https://business-business.business">Capitalism</a></li>
+    <li>No Bathroom Break</li>
+    <li>Wage Theft</li>
+    <li>You Might Also Like <strong>AI</strong></li>
+  </ul>
+</aside>
+
+<aside class="woman">
+  <h2>She's Back</h2>
+  <p>
+    Now she's <br>
+    <strong>Contemplating Treason</strong>.
+  </p>
+  <ul>
+    <li>Leak The Documents</li>
+    <li>It's The Right Thing To Do</li>
+    <li>Trans Agenda</li>
+  </ul>
+</aside>
+
+<aside>
+  <h2>Kids Page!</h2>
+  <p>
+    America's
+    <strong>CryptoKids</strong>
+  </p>
+  <ul>
+    <li>Download Flash Player</li>
+    <li>Enter Flash Site</li>
+    <li>Enter Text-Only Site</li>
+  </ul>
+</aside>
+
+<aside class="woman">
+  <h2>Look</h2>
+  <p>
+    Into her
+    <strong>Dead Eyes</strong>.
+  </p>
+  <ul>
+    <li>And Smile</li>
+    <li>Clutching The Papers</li>
+    <li>Terrified</li>
+  </ul>
+</aside>
+
+<style>
+  side-bar {
+    display: grid;
+    gap: var(--gap);
+    align-content: start;
+    text-shadow: 1px 1px 0 white;
+  }
+</style>
+
+<style webc:scoped>
+  aside {
+    background: linear-gradient(var(--text), white);
+    border: thick solid white;
+    color: var(--blue);
+    color-scheme: light;
+    padding: var(--gap);
+  }
+
+  .woman {
+    background-image: url('/img/woman.jpg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+
+  li {
+    background: white;
+    max-inline-size: max-content;
+  }
+
+  h2 {
+    background: radial-gradient(
+      ellipse 90% 3px at 50% calc(100% - 3px),
+      red 50%,
+      transparent 60%
+    );
+    color: inherit;
+    font-size: inherit;
+    text-align: center;
+    padding-block-end: 6px;
+    margin: unset;
+  }
+</style>

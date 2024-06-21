@@ -31,82 +31,6 @@
     padding: var(--gap);
   }
 @keyframes text-blur{0%,50%,90%,100%{filter:blur(0px)}60%,80%{filter:blur(2px)}70%{filter:blur(5px)}}@keyframes text-blink{0%{transform:skewX(0deg)}20%{transform:skewX(0deg)}21%{transform:skewX(-3deg)}35%{opacity:1;transform:skewX(0deg)}35.5%{opacity:.3;transform:skewX(70deg)}36%{transform:skewX(-60deg)}36.5%{opacity:1;transform:skewX(0deg)}100%{transform:skewX(0deg)}}.wwxfgrjiq header{display:grid;grid-template:"h e"auto"t e"auto/minmax(80%,1fr) minmax(14em,30em)}.wwxfgrjiq .h1,.wwxfgrjiq .tagline{margin:unset}.wwxfgrjiq .h1{align-self:end;font-weight:900;color:var(--green);text-decoration:none}.wwxfgrjiq b,.wwxfgrjiq svg{animation:text-blur 4s infinite,text-blink 11s infinite}.wwxfgrjiq svg{animation-delay:-1s;block-size:auto;contain:size;grid-area:e;inline-size:auto;margin:-2lh;place-self:stretch}
-text-field {
-    display: grid;
-  }
-text-area {
-    display: grid;
-  }
-
-  textarea {
-    field-sizing: content;
-    min-block-size: 4lh;
-  }
-form {
-    display: grid;
-    gap: 0.5lh;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  fieldset {
-    border: thin dotted var(--green);
-    display: grid;
-    gap: inherit;
-  }
-
-  legend {
-    color: var(--green);
-    font-family: var(--title-font);
-    font-weight: bold;
-  }
-
-  text-area,
-  text-field {
-    &:focus-within label {
-      color: var(--green);
-      font-weight: bold;
-    }
-
-    &:has([required]) label::after {
-      content: '*';
-      color: var(--green);
-      font-weight: bold;
-    }
-  }
-
-  label {
-    transition: all 300ms ease;
-    text-transform: lowercase;
-  }
-
-  textarea,
-  input {
-    font: inherit;
-    padding: 0.25rem;
-    border: thin solid;
-
-    &:focus {
-      border-color: var(--green);
-      outline: thin dotted var(--green);
-      outline-offset: 2px;
-    }
-  }
-
-  button {
-    background-color: var(--green);
-    color: var(--canvas);
-    font-family: var(--title-font);
-    padding: 0 1em;
-
-    &:focus,
-    &:hover,
-    &:active {
-      font-style: italic;
-    }
-  }
 side-bar {
     align-content: start;
     display: grid;
@@ -143,6 +67,25 @@ site-footer {
     strong {
       font-family: var(--title-font);
       text-align: center;
+    }
+  }
+main {
+    text-decoration: underline;
+    text-decoration-thickness: 1.2ex;
+    text-underline-offset: -1ex;
+    text-decoration-skip-ink: none;
+
+    p {
+      text-shadow: none;
+    }
+
+    em {
+      display: inline-block;
+      text-decoration: underline;
+      text-decoration-color: black;
+      text-decoration-thickness: inherit;
+      text-underline-offset: inherit;
+      text-decoration-skip-ink: inherit;
     }
   }
 body {
@@ -191,8 +134,8 @@ body {
   </head>
   <body>
     <site-header class="wwxfgrjiq"><header>
-  <h1 class="h1">NSA<b>4</b>.US</h1>
   
+  <a href="/" class="h1">NSA<b>4</b>.US</a>
   <p class="tagline">“If you think something, say something”</p>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510" width="510" height="510" style="fill: var(--green)">
   <path d="M254.87 4.1c137.67-.29 250.19 112.13 250.98 249.7.79 136.48-109.67 252.09-250.86 252.1-139.56.01-250.93-113.59-250.85-251.36C4.23 117.09 116.74 4.39 254.87 4.1Zm32.68 265.46h.01c2.73-3.38 6.31-2.12 9.2-1.59-.45-7.01-1.01-13.81-1.3-20.62-.2-4.63-.03-9.28-.03-13.93 0-9.95-.05-19.9.06-29.85.01-1.25.52-3.18 1.39-3.62 4.57-2.3 7.82-.18 7.83 4.81 0 2.65.03 5.31 0 7.96-.17 13.92-.39 27.83 2.91 41.53.73 3.04.53 6.32.62 9.5.02.9-.45 1.82-.69 2.72-.4-.01-.81-.02-1.21-.04-.7-6.49-1.41-12.98-2.11-19.47-.46-.04-.92-.07-1.38-.11-1.05 3.48-2.96 6.97-2.93 10.45.03 4.83 1.41 9.67 2.42 14.47.79 3.7 5.21 6.2 8.59 4.7 2.21-.98 4.32-2.34 3.47-5.74-1.62-6.51-3.04-13.08-4.15-19.69-.88-5.21-1.2-10.53-1.71-15.8-.19-1.96-.19-3.93-.31-6.68 6.45 3.99 11.81 3.43 17.15.98 4-1.83 4.75-4.03 2.8-7.87-3.54-6.97-7.01-13.99-10.77-20.85-.81-1.48-2.69-2.38-4.08-3.54-1.3-5.05 1.59-14.24 5.24-18.19.41-.44 1.09-.71 1.69-.88 12.31-3.51 15.39-7.92 13.81-20.43-.37-2.94.7-4.19 3.15-5.53 1.88-1.03 4-3.05 4.44-4.98 1.25-5.6 1.59-11.32-2.65-16.2-.95-1.09-1.45-2.57-2.62-4.73 7.56.46 10.07-4.15 11.95-9.4.7-1.95 1.84-2.58 3.96-2.1 6.76 1.54 12.88-.44 18.52-4.03 2.7-1.72 4.94-3.07 8.63-2.18 2.75.66 6.1-.94 9.12-1.76 1.42-.39 2.68-1.33 4.02-2.02-2.07 6.27-5.5 10.75-12.3 11-.07.54-.22.85-.13 1.05 6.65 14.14 12.97 28.46 20.14 42.33 3.41 6.6 7.48 7.22 14.91 2.5 2.49-1.58 3.3-3.48 2.33-6.31-1.38-4.01-2.37-8.15-3.88-12.11-3.27-8.54-6.91-16.94-10.14-25.5-4.15-10.98-9.07-21.57-16.59-30.62-5.73-6.9-12.72-13.12-21.77-14.45-17.85-2.62-33.92 2.26-47.19 14.79-5.83 5.5-7.71 12.66-6.01 20.43 1.35 6.2 3.06 12.35 5.13 18.34 2.77 8.02 2.3 15.34-3.12 22.1-5.39 6.73-11.87 12.36-19.74 15.65-3.62 1.52-8.3.61-12.5.54-.57 0-1.41-1.47-1.63-2.38-1.02-4.23-1.93-8.48-2.77-12.75-.96-4.89-1.84-9.79-2.68-14.69-1.05-6.12-2.08-12.24-3.03-18.37-1.1-7.19-1.88-14.44-3.26-21.58-.53-2.75-1.91-5.62-3.7-7.77-4.73-5.71-25.11-10.61-32.2-8.12-.13.04-.29.05-.37.14-2.94 3.48-6.76 2.01-10.37 1.92-2.91-.08-5.93-.43-8.72.18-2.42.53-5.49 1.67-6.68 3.55-3.36 5.3-1.77 11.2-1.13 17.85 4.78-7.03 7.52-8.75 12.5-6.77 4.58 1.82 8.72 4.73 13.06 7.16-7.07-1.06-12.65-7.7-21.23-4.01l8.76 5.11-.31.56c-3.21-1.34-6.43-2.69-9.64-4.03-.18.39-.36.79-.54 1.18.84.49 1.65 1.04 2.53 1.45 3.96 1.85 8.01 3.53 11.89 5.53 4.16 2.14 5.58 5.58 4.18 9.94-2.22 6.92-4.68 13.75-6.88 20.68-1.39 4.38-2.29 8.91-3.78 13.25-1.38 3.98-2.51 8.48-5.21 11.41-1.54 1.68-6.01.52-9.12.93-7.89 1.03-14.4-1.83-20.68-6.32-6.03-4.32-8.3-9.74-6.68-16.85 1.65-7.23 3.57-14.41 5.1-21.66 2.97-14.1-1.84-22.71-14.74-29.69-5.65-3.06-12.46-4.73-18.91-5.36-10.78-1.05-21.62.1-30.9 6.48-10.4 7.14-17.86 16.85-22.89 28.45-6.24 14.39-8.87 29.66-11.23 45-.57 3.71-1.08 7.42-1.72 11.89 4.23-.79 7.56-1.05 10.61-2.12 1.82-.64 3.82-2.24 4.67-3.94 6.22-12.5 11.49-25.33 13.43-39.34.37-2.7-.15-4.4-2.09-6.22-2.06-1.93-3.7-4.31-5.53-6.5.3-.33.61-.66.91-.99 4.75 2.8 8.58 7.35 15.27 5.55 5.77-1.55 10.96-3.54 15.41-8.81 1.17 7.2 5.81 8.95 11.23 7.7 4.38-1.02 8.44-3.48 12.59-5.42 1.07-.5 1.94-1.44 2.91-2.18-.24 2.02-1.21 3.35-2.1 4.72-5.84 8.95-5.91 16.52-.11 23.32-.58.67-1.17 1.36-1.78 2.04-3.7 4.1-2.73 8.79-1.81 13.54.76 3.91 4.08 3.28 7.42 3.89-4.51 5.29-4.71 10.41-1.29 15.96 2.67 4.33 4.71 5.22 9.32 2.82 1.27-.66 2.55-1.32 3.82-1.97-4.1 7.34-4.07 11.01 1.2 14 2.29 1.3 6.02 2.11 8.14 1.1 2.12-1.01 3.03-4.55 4.47-6.98.73 9.18.75 18.3.71 27.41 0 .86-.15 1.84-.57 2.57-3.29 5.85-6.71 11.63-9.94 17.51-.44.81-.47 2.43.06 3.09 2.64 3.33 8.46 4.25 12.35 2.24 1.5-.77 3.06-1.42 4.83-2.23v-3.43c0-10.35 0-20.69.06-31.04 0-1.11.35-3.14.74-3.19 2.46-.31 5.03-.48 7.43 0 .66.13 1.18 2.65 1.19 4.07.08 17.64.07 35.29 0 52.93 0 1.2-.76 2.39-.99 3.61-.79 4.31-1.5 8.63-2.4 13.85 5.08-1.91 8.77-5.47 13.91-2.27v-4.46c0-21.09.09-42.19-.05-63.28-.02-3.59 1-4.87 4.68-4.96 4.02-.1 4.93 1.59 4.92 5.19-.09 23.88-.04 47.76-.04 71.64v7.21c-.31.2-.62.41-.93.61-1.24-1.54-2.39-3.16-3.74-4.6-4.22-4.52-7.03-4.98-12.68-2.24-.95.46-1.84 1.18-2.83 1.37-.37.07-.97-1.01-1.83-1.98-1.65 3.01-3.92 5.82-4.8 9.01-2.08 7.52-3.76 15.18-5.14 22.87-4.11 22.95-7.96 45.94-12.04 68.89-.53 2.98.33 4.53 3.25 4.25 1.81-.18 3.94-.78 5.24-1.95 8.33-7.48 12.9-17.33 14.89-27.98 3.56-19 6.16-38.17 9.17-57.27.2-1.27.51-2.53.77-3.79.48.09.97.17 1.45.26-.41 4.11-.88 8.22-1.2 12.34-.08 1.08.04 2.34.53 3.27 4.05 7.71 8.22 15.36 12.29 23.06.31.58.14 1.41.22 2.46-8.16-5.1-9.26-14.18-13.73-22.12-.4 1.68-.63 2.41-.74 3.16-2.39 16.9-4.78 33.8-7.09 50.71-.19 1.39-.01 2.95.45 4.28 1.33 3.88 2.97 7.66 4.29 11.55.33.96-.1 2.18-.17 3.28-.78-.68-1.8-1.21-2.29-2.06-1.87-3.23-3.57-6.57-5.63-10.41-1.69 2.33-3.19 3.68-3.79 5.34-3.14 8.76-9.75 8.45-16.96 6.77-.26-.06-.5-.18-.76-.22-4.91-.85-12.53 1.97-14.22 5.94-1.65 3.88-4.13 4.62-8.03 4.67-11.3.15-22.67-1.14-33.97 1.08 1.25-1.79 3.06-3.49 3.8-5.58 2.96-8.33 5.93-16.69 8.23-25.21 2.35-8.71 3.83-17.62 9.85-24.9 1.04-1.25 1.13-3.48 1.24-5.29.78-12.57 1.53-25.15 2.13-37.73.96-20.26 1.82-40.53 2.64-60.8.06-1.47-.08-3.58-1-4.33-2.88-2.37-6.18-4.22-9.22-6.21 0 0-.06.51-.09 1.03-1.17 29.15-2.38 58.3-3.47 87.45-.12 3.32-.53 6.14-3.32 8.46-1.25 1.04-2.09 3.06-2.34 4.75-1.98 13.37-3.66 26.78-5.7 40.14-.72 4.68-2.18 9.25-3.31 13.87l-1.51-.33 3.99-36.27c-1.02.8-1.5 1.72-1.76 2.7-2.12 7.93-3.9 15.95-8.42 23.04-1 1.58-1.18 3.78-1.4 5.74-.76 6.7-1.38 13.42-2.06 20.22-2.85-2.79-10.3-2.7-13.47.15-2.52 2.27-3.94 5.11-3.02 8.54.92 3.41 3.05 5.91 6.7 6.6 1.94.37 3.94.55 5.92.56 9.42.05 18.84-.12 28.26.04 12.42.22 24.84.7 37.26 1.05 1.18.03 2.42.15 3.55-.12 7.05-1.67 14.03-1.34 19.68-.19 1.85 3.25 3.17 5.38 4.31 7.61 2.04 3.98 4.7 1.75 6.96.56 2.81-1.48 4.18 0 5.45 2.03 1.89 3.03 4.21 4.82 7.76 2.63 2.88-1.78 5.07-.8 7.55.98 1.26.9 3.64 1.65 4.78 1.06 4.19-2.18 7.87-1.76 11.42 1.02 3.64 2.85 7.1 2.67 10.72-.09 3.28-2.5 6.71-3.13 10.71-1.12 1.3.66 3.88.12 5.17-.82 2.47-1.82 4.61-2.8 7.49-1.05 3.25 1.97 5.71.97 7.46-2.3 1.46-2.72 3.39-3.77 6.46-2.05 1.37.77 3.42 1.45 4.71.97 2.65-1 4.82-6.81 4.12-10 .95 0 2.26-.37 2.64.06 1.82 2.09 3.37 1 5.21.11.99-.48 2.32-.33 3.5-.34 12.31-.14 24.62-.27 36.94-.33.56 0 1.12.79 1.68 1.22-1.83 2.33-.42 3.85 1.6 4.44 2.63.77 3.68-1.02 3.94-2.83-1.91-.49-3.54-.9-5.17-1.32 1.28-.06 2.77.29 3.79-.24 4.59-2.41 9.04-1.27 11.44 3.39 3.77 7.32 8.9 13.45 15.47 18.4 13.67 10.29 26.76 8 35.66-6.58 3.23-5.3 5.39-11.27 8.73-16.49 1.88-2.95 5.14-5.03 7.83-7.45.59-.53 1.36-.84 2.67-1.63-5.56-1.32-8.87-4.37-10.97-8.79-1.42-2.99-2.75-6.04-4.3-8.96-1.77-3.34-3.74-6.57-5.09-8.93h-11.33c1.07 5.59 2.09 10.98 3.1 16.27 10.05.58 14.32 3.83 14.25 10.54-.08 6.96-4.78 10.39-14.45 10.54.24 9.53-2.71 14.57-9.22 14.61-2.7.02-5.79-1.08-8.02-2.64-4.17-2.91-3.8-7.65-2.91-12.21-8.72 1.16-14.18-1.82-15.09-8.4-.32-2.29.37-5.06 1.47-7.15 2.47-4.7 7.35-4.88 11.68-5.03l1.12-10.36c-.4-.07-.8-.13-1.19-.2-.8 2.69-1.6 5.37-2.33 7.83-3.2 1.29-6.37 2.57-9.43 3.8 2.52-3.42 5.21-6.87 7.68-10.46 3.36-4.88 3.12-5.93-1.86-10.17-.95.84-2.12 1.56-2.88 2.59-3.85 5.19-7.75 10.36-11.32 15.74-1.77 2.66-4.1 3.62-6.73 2.72-1.08-.37-1.57-2.69-2.14-4.2-.32-.84.07-2.06-.4-2.7-.84-1.14-2.1-2.73-3.18-2.73-1.1 0-2.54 1.5-3.2 2.7-.58 1.05-.42 2.6-.34 3.91.15 2.39-.84 3.44-3.23 3.34-1.72-.08-3.49.19-5.16-.12-.91-.17-2.29-1.18-2.37-1.93-.42-4.08-3.18-5.97-6.45-7.36-2.65-1.12-5.43-1.95-8.07-2.89-.16-1.74-.17-3.34-.49-4.88-5.85-28.7-11.7-57.39-17.67-86.06-.77-3.71-1.67-7.59-3.47-10.86-3.13-5.66-8.43-8.6-14.89-9.31Zm108.1-102.62c-.21 2.08-.76 4.5-.64 6.9.46 9.26 1.12 18.52 1.72 27.77 1.09 16.66 2.23 33.32 3.27 49.98.18 2.92 1.28 4.96 3.41 7.15 3.16 3.24 6.16 7.03 7.9 11.15 2.18 5.18 2.71 11.03 4.52 16.4 1.93 5.7 4.15 11.39 7.04 16.65.99 1.81 4.28 3.04 6.65 3.28 3.83.39 4.61-1.02 3.53-4.84-4.71-16.65-6.94-33.7-8.02-50.92-1.38-21.94-2.58-43.89-4.13-65.82-.45-6.37-1.85-12.68-2.85-19.32-4.23 1.77-6.36 3.62-5.55 8.04.95 5.19 1.09 10.53 1.61 15.8 2.87 29.13 5.75 58.25 8.63 87.38.28 2.86.61 5.72.92 8.58-1.23-.7-1.72-1.51-1.84-2.37-2.67-18.73-5.64-37.44-7.84-56.23-2.05-17.49-3.24-35.09-4.97-52.62-.12-1.17-1.43-2.72-2.56-3.21-3.18-1.4-6.57-2.33-10.79-3.76Zm-272.36 34.65c-.35.11-.7.21-1.05.32-.28 3.28-.7 6.55-.83 9.83-.94 23.97-1.82 47.93-2.7 71.9-.14 3.88-.68 7.31-3.52 10.54-1.82 2.07-2.42 5.51-2.84 8.44-.44 3.11-.04 6.35.03 9.53.33 14.09-.31 28.09-3.9 41.81-.47 1.78-1.14 3.51-1.71 5.26-.36-.09-.72-.17-1.09-.26.91-13.7 1.82-27.4 2.72-41.1l-.83-.06c-2.96 7.71-5.92 15.43-8.83 22.99.31 1.66 1.07 3.49.89 5.23-.78 7.76-1.79 15.51-2.81 23.25-.41 3.07-1.09 6.1-1.81 10.01 2.57-.68 4.45-.83 5.97-1.63 7.24-3.82 11.38-9.68 12.91-17.94 2.89-15.55 7.35-30.65 15.52-44.41.84-1.41 1.2-3.24 1.33-4.9 1.05-13.2 2.33-26.4 2.87-39.62.68-16.68.74-33.38.96-50.07.01-1.12-.63-2.85-1.48-3.27-4.9-2.43-6.78-6.84-8.29-11.6-.45-1.43-1.02-2.82-1.53-4.23ZM72.18 318.66c.54-1.57.58-3.07 1.34-3.71 7.46-6.21 9.85-14.88 11.69-23.77 1.87-9 4.27-17.7 9.58-25.48 1.59-2.33 2.15-5.68 2.33-8.61.87-14.01 1.34-28.05 2.16-42.07.53-8.99 1.44-17.96 2.15-26.94.24-2.96-4.14-8.95-6.47-8.91-3.26.06-6.26 3.63-6.46 7.58-.28 5.82-.56 11.65-.94 17.46-1.25 19.43-2.29 38.88-3.89 58.28-1.08 13.05-2.96 26.04-4.54 39.05-.12.96-.67 1.86-1.02 2.79-.82-2.73-.93-5.22-.8-7.7.35-6.22.73-12.43 1.23-18.64 2.51-30.91 5-61.81 7.69-92.71.25-2.85-.58-4.23-3.02-5.09-1.48-.52-2.93-1.09-5.17-1.92-3.63 46.83-7.82 93.22-5.87 140.37Zm13.19 31.08c-.12-.31-.25-.62-.37-.93 5.74-3.37 10.09-8.03 12.03-14.28 3.1-9.98 5.63-20.13 8.56-30.16 1.21-4.16 2.24-8.55 4.42-12.19 2.21-3.7 3.36-7.41 3.62-11.55 1.63-26.06 3.27-52.12 4.84-78.19.07-1.22-.22-2.63-.8-3.7-1.71-3.11-3.45-6.26-5.61-9.06-.91-1.19-2.89-2.07-4.39-2.08-.85 0-2.19 1.92-2.47 3.16-.53 2.3-.53 4.73-.6 7.12-.63 20.14-1.11 40.29-1.96 60.43-.14 3.38-1.23 7.05-2.95 9.96-3.89 6.6-5.9 13.16-5.19 21.08.9 9.99.44 20.12.29 30.18-.04 3.02-.99 6.03-1.52 9.04-.57-.03-1.14-.06-1.71-.08L90.15 292c-2.69 5.78-4.73 11.6-6.7 17.44-.15.44.07 1.03.18 1.53 2.73 12.23 1.89 24.5.32 36.76-.49 3.86 1.34 3.54 4.57 2.39-1.52-.18-2.33-.28-3.14-.38Zm317.95 6.7c-1.06-1.59-1.7-2.23-1.98-3.01-1.5-4.25-3.03-8.49-4.32-12.8-4.65-15.58-6.13-31.68-7.86-47.76-.24-2.28-1.89-5.36-3.77-6.32-4.15-2.12-5.16-5.18-5.13-9.3.01-1.98-.39-3.95-.57-5.93-2.16-23.08-4.3-46.16-6.49-69.24-.13-1.34-.65-2.64-.98-3.95l-1.28-.38c-1.39 2.1-2.91 4.13-4.12 6.34-1.14 2.08-2.09 4.3-2.83 6.55-.58 1.76-1.18 3.73-.98 5.51 2.68 23.56 5.27 47.13 8.38 70.64 1.45 10.99 1.37 22.58 9.58 31.69 1.7 1.89 2.6 4.62 3.51 7.09 2.31 6.34 4.02 12.94 6.72 19.1 3 6.86 6.52 13.54 10.41 19.94 2.83 4.66 8 5.89 13.58 7.08-1.32-6.27-2.34-11.99-3.73-17.6-2.08-8.38-1.12-17.78-8.03-24.61-.62-.62-.93-1.61-1.24-2.48-1.77-4.94-3.5-9.89-5.24-14.83-.33.06-.66.12-.99.19 2.4 14.34 4.79 28.67 7.37 44.09Zm4.76-41.49-1.35.27c-.5-1.31-1.25-2.57-1.46-3.93-2.23-14.25-4.46-28.51-6.46-42.79-.46-3.31-.37-6.5-3.53-8.8-.91-.66-1.14-2.61-1.21-4-1.22-24.36-2.34-48.73-3.54-73.1-.12-2.45-.54-4.88-.85-7.58-3.29.68-6.56.16-7.44 4.04-1.98 8.67-5.8 17.16-2.46 26.33.17.48.06 1.05.11 1.58 2.1 22.83 4.18 45.66 6.34 68.49.12 1.23.54 2.75 1.38 3.55 6.15 5.86 8.84 13.36 10.77 21.34 1.68 6.95 3.37 13.91 5.48 20.73 2.42 7.83 10.54 14.11 17.04 13.69-1.1-7.05-2.8-14.07-3.16-21.16-.65-12.86-4.83-24.84-8.2-37.03-.82-2.96-2.86-5.58-4.34-8.36l-1.33.54c-.48 15.52.67 30.93 4.22 46.18Zm-19.28 53.87c-1.38-1.1-1.79-1.28-1.94-1.59-.4-.83-.84-1.68-1.01-2.57-2.15-11.56-4.57-23.08-6.25-34.71-.83-5.76-3.13-10.46-7.35-14.04-2.62-2.23-3.51-4.62-3.78-7.82-.58-6.86-1.38-13.71-2.26-20.54-1.86-14.31-3.9-28.6-5.72-42.92-1.05-8.28-1.73-16.61-2.78-24.89-.16-1.29-1.32-3.34-2.23-3.46-1.71-.23-4.72.19-5.17 1.22-1.4 3.19-2.91 6.93-2.49 10.22 3.29 25.75 6.93 51.45 10.69 77.13.98 6.67 1.19 14.18 4.52 19.61 6.28 10.25 9.6 21.47 14.07 32.34 2.89 7.04 6.64 13.83 10.8 20.21 3.43 5.25 8.72 8.71 15.47 10.68-.42-2.99-.91-5.55-1.13-8.13-.41-4.76-2.05-8.82-5.14-12.6-2.48-3.04-4.22-6.74-5.94-10.31-1.98-4.12-3.57-8.42-5.32-12.65-.3.07-.61.13-.91.2l3.88 24.62Zm-16.37-10.37c-3.9-10.09-6.47-19.46-12.83-27.13-1.68-2.03-3.11-4.66-3.6-7.21-2.21-11.44-4.26-22.93-5.98-34.46-2.71-18.21-5.08-36.47-7.68-54.69-.21-1.48-.77-3.8-1.69-4.1-2.51-.82-6.06-1.91-7.8-.77-2.15 1.42-4.3 5.14-4.01 7.58 1.76 15.25 3.02 30.73 6.74 45.55 4.07 16.26 10.27 32.02 16.2 47.76 4.01 10.65 10.66 19.75 20.66 27.48Zm-235.72 82.23c.76.2 1.14.39 1.52.39 5.44.05 10.87.16 16.31.08 9.32-.15 8 1.74 8.18-8.61.04-2.35-.42-3.87-3.24-3.64-3.64.29-3.01-2.41-3.1-4.6-.08-2.16.01-4.14 3.01-3.83 3.96.41 3.1-2.39 3.31-4.7.27-2.97-1.21-3.57-3.75-3.56-16.84.04-33.68.03-50.52 0-2.09 0-3.81.27-3.51 2.95.25 2.23-1.18 5.48 3.16 5.33 3.5-.12 2.64 2.54 2.77 4.5.13 2.06.19 4.05-2.89 4-.96-.01-2.72.83-2.76 1.38-.23 3.15-.14 6.34.08 9.49.03.48 1.34 1.24 2.07 1.25 7.16.09 14.32.13 21.48-.05.84-.02 2.28-1.39 2.36-2.23.28-3.12.11-6.28.11-9.41-1.81-.35-3.07-.6-4.41-.86v-8.04c4.17 0 8.11-.07 12.04.08.62.02 1.55.95 1.74 1.63 1.13 3.97-.09 6.15-3.98 7.28v11.19Zm17.67-205.75c-.11 1.22-.3 2.52-.34 3.83-.86 32.08-1.74 64.16-2.52 96.24-.08 3.48-1 6.28-3.27 9.04-2.04 2.47-3.54 5.52-4.68 8.54-1.64 4.33-2.71 8.87-4.07 13.3-1.62 5.3-3.29 10.59-4.94 15.89l.69.36c1.99-2.21 3.98-4.43 5.97-6.64-.94-.17-1.31.17-1.72.48-.48.37-.99.7-1.49 1.04-.51-.22-1.03-.44-1.54-.65 19.37-27.66 24.79-59.43 27.72-91.92l1.06.2v18.82c.67-4.46 1.11-8.94 1.21-13.43.25-10.6.28-21.2.51-31.79.1-4.77.61-9.53.6-14.29 0-1.35-.81-3.35-1.86-3.93-3.52-1.92-7.32-3.33-11.34-5.08Zm193.01-89.01c-.42 1.76-1.3 4.29-1.57 6.87-.25 2.47-.78 5.59.39 7.41 6.28 9.79 13.01 19.3 19.75 28.79.63.89 2.57 1.58 3.64 1.32 6.64-1.63 11.49-14.28 7.21-19.55-8.37-10.3-14.03-22.12-20.01-33.79-1.91-3.73-4.09-7.33-6.41-11.46-1.37 2.26-2.11 4.2-3.45 5.53-2.37 2.36-2.58 4.86-1.13 7.53 1.27 2.34 3.02 4.42 4.35 6.73 6.75 11.71 13.43 23.46 20.13 35.2.88 1.55 1.68 3.15 2.68 5.04-3.99.76-4.89-2.01-6-4-6.7-12-13.26-24.08-19.58-35.62Zm-217.37-22.81c-6.2 2.48-11.91 4.71-17.56 7.09-.69.29-1.24 1.35-1.49 2.17-4.07 13.27-8.09 26.55-12.07 39.85-.28.92-.48 2.16-.08 2.94 2.36 4.68 9.61 5.46 12.74 1.23 9.5-12.85 17.35-26.49 21.68-42.11 1.52-5.47.29-8.81-3.23-11.16Zm19.53 2.85c-2.47.93-4.73 2.21-7.13 2.59-2.81.45-3.9 1.84-4.71 4.4-4.86 15.46-10.34 30.64-20.56 43.59-.88 1.12-1.49 2.53-1.92 3.9-1.39 4.42.29 9.8 3.62 11.74 4.43 2.57 6.93-1.03 8.93-3.6 5.36-6.87 10.14-14.19 15.23-21.28 2.36-3.3 4.06-6.61 3.51-10.95-.25-1.97.54-4.22 1.35-6.14 1.43-3.41 3.24-6.53.12-10.11-.86-.99-.85-3.1-.62-4.59.49-3.13 1.39-6.19 2.18-9.55Zm206.05-1.62c-.1-.26.07.36.36.92 7.16 14.03 14.82 27.77 24.8 40.05 3.28 4.03 7.5 3.98 10.87-.05 2.79-3.33 2.83-6.78 1-10.69-4.53-9.7-8.81-19.51-13.22-29.27-1.65-3.65-3.38-7.27-4.76-10.22-6.57 3.19-12.53 6.09-19.06 9.26Zm-205.1 41.83h-1.68c-1.15 1.87-2.24 3.79-3.45 5.62-5.22 7.92-10.25 15.98-15.83 23.64-2.89 3.97-3.63 5.76-1.28 10.13 4.27 7.94 9.69 8.99 15.27 2.16 5.16-6.32 9.45-13.36 13.94-20.21.47-.71.07-2.91-.58-3.29-4.79-2.77-5.33-7.08-5.15-11.98.07-2.01-.81-4.06-1.25-6.09Zm189.76-5.8c-.21.23-.46.39-.54.62a8.01 8.01 0 0 0-.4 1.53c-.98 6.66-1.31 13.49-5.42 19.31-.44.63-.3 2.14.16 2.86 4.59 7.27 9.13 14.58 14.04 21.63 2.75 3.95 7.44 3.98 11.36.7 4.63-3.87 5.82-9.12 2.99-12.86-3.12-4.12-6.38-8.15-9.18-12.47-4.5-6.97-8.67-14.16-13.01-21.31Zm-21.14 32.33c.65 2.13.98 4.43 2.01 6.35 3.88 7.21 7.91 14.35 12.05 21.42 1.86 3.18 5.26 3.76 8.21 1.79 4.47-2.99 5.98-7.13 3.96-10.3-5.4-8.47-10.64-17.04-16.17-25.42-.8-1.21-2.89-2.24-4.34-2.19-3.71.13-5.34 2.97-5.73 8.36Zm-158.77-2.46c-.42.68-1.16 1.77-1.79 2.91-4.32 7.86-7.78 16.27-14.87 22.32-.72.61-.82 2.84-.29 3.81.93 1.68 2.44 3.13 3.95 4.37 3.78 3.1 6.43 2.63 9.14-1.51 3.69-5.65 7.31-11.35 10.95-17.03 1.39-2.18 2.76-4.37 3.65-5.77-3.84-3.25-7.15-6.06-10.74-9.1Zm17.25 11.15c-.21-.23-.42-.47-.63-.7-1.34 1.17-3.04 2.11-3.95 3.55-4.62 7.35-9.05 14.82-13.48 22.29-.55.93-1.27 2.77-.93 3.07 2.62 2.27 5.24 4.79 8.33 6.18 2.81 1.27 4.44-1.55 5.74-3.7 3.75-6.21 7.45-12.45 11.11-18.71 1.26-2.16-3.01-11.54-5.39-12.03-.25-.05-.52.03-.79.05Zm13.48 43.55c-4.96 2.62-5.12 2.85-5.29 6.86-.26 5.82-.45 11.64-.79 17.46-.25 4.29-.68 8.57-1.03 12.83 7.34.9 10.53-1.16 11.92-7.78.76-3.61.57-7.45 1.54-10.99 1.73-6.31-.35-11.61-3.54-17.17-.64 10.15-.56 20.09-3.77 29.5l-1.22-.13c.7-9.92 1.41-19.84 2.17-30.57Zm-17.47-2.74-1.08.21c-.13.47-.35.93-.38 1.41-.78 12.55-1.6 25.1-2.19 37.66-.04.78 1.58 2.3 2.5 2.36 3.66.25 6.3-2.02 7.03-7.17 1.27-9.02 1.92-18.13 2.75-27.21.31-3.4-1.67-3.56-4.22-2.93-1.83 10.57.2 21.52-4.79 31.42-.6-2.63-.38-5.18-.18-7.74.63-7.78 1.35-15.56 1.81-23.35.09-1.52-.8-3.11-1.24-4.66Zm155.25 31.07c-2.03-10.9-4.02-21.81-6.15-32.69-.17-.86-1.3-1.54-1.98-2.3-.39 1-1.23 2.07-1.09 2.98 1.07 6.91 2.35 13.8 3.51 20.7.29 1.7.35 3.45.51 5.17l-1.03.21c-.39-1.02-.92-2-1.15-3.05-1.66-7.75-3.26-15.52-4.88-23.28-.41-1.98-.38-4.36-3.37-3.95.69 7.65 1.19 15.13 2.11 22.56.35 2.83 1.32 5.71 2.62 8.25 2.36 4.65 6.19 6.31 10.91 5.4Z"></path>
@@ -209,269 +152,19 @@ body {
 
 
 </site-header>
-    <main><p>The National Security Agency/Central Security Service
-(NSA/CSS)
-is home to America’s
-<strong>codemakers</strong> and <strong>codebreakers</strong>.
-We’ve been making and breaking
-all your <em>dirty little codes</em>
-since 1952.
-Bro code, hanky code, the code of conduct,
-gay-coded villains.
-You name it, we broke it.</p>
-<p>But so-called “US Citizens”
-have been developing their own secrets (un-sanctioned)
-faster than we can break them!
-We’ve tried everything —
-from email intercepts and metadata mining
-to warrantless wiretaps —
-but it’s time we ask for help.</p>
-<h2>Do Your Part for National Security</h2>
-<p><strong>No codemaking or codebreaking experience necessary.</strong>
-Simply fill out the forms below,
-and send <s>me</s> <ins>the NSA</ins> your secrets directly!
-<strong>All fields are required (by law)*.</strong></p>
-<p><secret-form><form name="secrets" method="POST" netlify-honeypot="bot-field" data-netlify="true" action="/thanks/">
-  <text-field><label for="webc-L57QU">Name</label>
-<input id="webc-L57QU" type="text" name="name" required>
+    <main><p>I wasn't sure what to put here,
+so I pasted my <em>2011</em> artist manifesto.
+Maybe, at some point,
+I'll think of something more appropriate.</p>
+<p><strong>notes towards a queer art.</strong></p>
+<p>So that we might stumble towards beauty <em>together</em>.</p>
+<p>The art will speak for its self, and I must speak for mine:</p>
+<p>Nothing is solid, nothing is set, and nothing will stay where you left it. The clouds shift. Magnetic north shifts. Your friends shift. The sun moves from the three hand to the four, and squirrels are collecting nuts. So where does that leave us?</p>
+<p>Right here, <em>together</em>, and each of us entirely alone. Each a unique mix of <em>entirely un-unique</em> ingredients. Blood and bones. Particles bouncing off particles become abstract thought. And somewhere in there we make love, go insane, vomit on our friends, write music, start a business, jump in front of cars, drop bombs, build rockets and sleep on our sides.</p>
+<p>We string <em>together</em> our best recollections and call them a matter of time. First this, then that. But in the end every story is incomplete, full of holes and misdirections. We forget to <em>consider the importance</em> of his socks and the sweat beading on her neck. And that, to me, is beautiful.</p>
+<p>Because life can never be said or solved. Here we are, stumbling through this wreckage and rubble, finding beauty in the world and in each other along the way. We fall between meanings and explore outside them. And art gives us a venue to <em>consider what remains</em>; what manifestos can never say.</p>
+<p>So that is what I like. Narrative that is full of holes and questions. Bits borrowed from here and there. A relationship with the culture and art around it. Accidents triggering unexpected associations. Diverse people breathing and sweating and fighting and playing in the rubble <em>together</em>. Violence and passion and insanity and finally hope. Grasping at stability and form and meaning, but always coming up short. So that we might stumble towards meaning <em>together</em>. Towards joy and beauty, in all our <em>queer</em> glory.</p>
 
-
-</text-field>
-  <text-area><label for="webc-_R4iq">AKA (also known as)</label>
-<textarea id="webc-_R4iq" name="aka-also-known-as" required></textarea>
-
-
-</text-area>
-  <text-field><label for="webc-6pwUi">Email</label>
-<input id="webc-6pwUi" type="email" name="email" required>
-
-
-</text-field>
-  <text-area><label for="webc-fvkud">Other emails (comma-separated)</label>
-<textarea id="webc-fvkud" name="other-emails-comma-separated" required></textarea>
-
-
-</text-area>
-
-  <text-field><label for="webc-gqbDu">Birth date</label>
-<input id="webc-gqbDu" type="text" name="birth-date" required>
-
-
-</text-field>
-  <text-field><label for="webc-X57LZ">Credit card</label>
-<input id="webc-X57LZ" type="text" name="credit-card" required>
-
-
-</text-field>
-
-  <fieldset>
-    <legend>Physical Address</legend>
-    <text-field><label for="webc-OUoqX">Street</label>
-<input id="webc-OUoqX" type="text" name="street" required>
-
-
-</text-field>
-    <text-field><label for="webc-RVScq">Street Continued</label>
-<input id="webc-RVScq" type="text" name="street-continued" required>
-
-
-</text-field>
-    <text-field><label for="webc-0eskZ">Region / State</label>
-<input id="webc-0eskZ" type="text" name="region-state" required>
-
-
-</text-field>
-    <text-field><label for="webc-zqvCE">Locality / City</label>
-<input id="webc-zqvCE" type="text" name="locality-city" required>
-
-
-</text-field>
-    <text-field><label for="webc-K8wrF">Postal Code</label>
-<input id="webc-K8wrF" type="text" name="postal-code" required>
-
-
-</text-field>
-  </fieldset>
-
-  <fieldset>
-    <legend>Social Media</legend>
-    <text-field><label for="webc-to670">Finsta</label>
-<input id="webc-to670" type="text" name="finsta" required>
-
-
-</text-field>
-    <text-field><label for="webc-AVJ-p">FetLife</label>
-<input id="webc-AVJ-p" type="text" name="fetlife" required>
-
-
-</text-field>
-    <text-field><label for="webc-99mYw">Ashley Madison</label>
-<input id="webc-99mYw" type="text" name="ashley-madison" required>
-
-
-</text-field>
-  </fieldset>
-
-  <fieldset>
-    <legend>Interest</legend>
-    <text-field><label for="webc-hJQCG">Grade school crush</label>
-<input id="webc-hJQCG" type="text" name="grade-school-crush" required>
-
-
-</text-field>
-    <text-field><label for="webc-gtK2K">Grad school crush</label>
-<input id="webc-gtK2K" type="text" name="grad-school-crush" required>
-
-
-</text-field>
-    <text-field><label for="webc-EQeOB">Celebrity crush</label>
-<input id="webc-EQeOB" type="text" name="celebrity-crush" required>
-
-
-</text-field>
-    <text-field><label for="webc-MiirP">Candy crush</label>
-<input id="webc-MiirP" type="text" name="candy-crush" required>
-
-
-</text-field>
-    <text-area><label for="webc-D2gcW">Fantasy</label>
-<textarea id="webc-D2gcW" name="fantasy" required></textarea>
-
-
-</text-area>
-    <text-area><label for="webc-qp_zU">Reality</label>
-<textarea id="webc-qp_zU" name="reality" required></textarea>
-
-
-</text-area>
-  </fieldset>
-
-  <fieldset>
-    <legend>Activity</legend>
-    <text-area><label for="webc-QA_IS">Previous affairs</label>
-<textarea id="webc-QA_IS" name="previous-affairs" required></textarea>
-
-
-</text-area>
-    <text-area><label for="webc-LURze">Current affairs</label>
-<textarea id="webc-LURze" name="current-affairs" required></textarea>
-
-
-</text-area>
-    <text-area><label for="webc-QQPHW">Global affairs</label>
-<textarea id="webc-QQPHW" name="global-affairs" required></textarea>
-
-
-</text-area>
-  </fieldset>
-
-  <fieldset>
-    <legend>Mother</legend>
-    <text-field><label for="webc-iuSgH">Maiden name</label>
-<input id="webc-iuSgH" type="text" name="maiden-name" required>
-
-
-</text-field>
-    <text-field><label for="webc-ylfNR">Middle name</label>
-<input id="webc-ylfNR" type="text" name="middle-name" required>
-
-
-</text-field>
-    <text-field><label for="webc-nEVOp">Petname</label>
-<input id="webc-nEVOp" type="text" name="petname" required>
-
-
-</text-field>
-    <text-area><label for="webc-cd8f8">Disappointments (hers)</label>
-<textarea id="webc-cd8f8" name="disappointments-hers" required></textarea>
-
-
-</text-area>
-    <text-area><label for="webc-KboPl">Disappointments (yours)</label>
-<textarea id="webc-KboPl" name="disappointments-yours" required></textarea>
-
-
-</text-area>
-    <text-area><label for="webc-Fwrp-">Disappointments (ours)</label>
-<textarea id="webc-Fwrp-" name="disappointments-ours" required></textarea>
-
-
-</text-area>
-  </fieldset>
-
-  <fieldset>
-    <legend>Personality</legend>
-    <div>
-      <input type="radio" id="person-good" name="personality" required>
-      <label for="person-good">Good</label>
-    </div>
-    <div>
-      <input type="radio" id="person-bad" name="personality" required>
-      <label for="person-bad">Bad</label>
-    </div>
-    <div>
-      <input type="radio" id="person-ind" name="personality" required>
-      <label for="person-ind">Morally conflicted (still bad)</label>
-    </div>
-  </fieldset>
-
-  <fieldset>
-    <legend>Access</legend>
-    <text-area><label for="webc-saYUC">Passwords (all of them)</label>
-<textarea id="webc-saYUC" name="passwords-all-of-them" required></textarea>
-
-
-</text-area>
-    <text-field><label for="webc-41X6R">Door Code</label>
-<input id="webc-41X6R" type="text" name="door-code" required>
-
-
-</text-field>
-    <text-field><label for="webc-Ji8Wq">Four-digit pin no.</label>
-<input id="webc-Ji8Wq" type="text" name="four-digit-pin-no" required>
-
-
-</text-field>
-    <text-field><label for="webc-UpiIA">Six-digit pin no.</label>
-<input id="webc-UpiIA" type="text" name="six-digit-pin-no" required>
-
-
-</text-field>
-    <text-field><label for="webc-gdeEa">Social security no.</label>
-<input id="webc-gdeEa" type="text" name="social-security-no" required>
-
-
-</text-field>
-  </fieldset>
-
-  <text-area><label for="webc-aPecg">Other (describe)</label>
-<textarea id="webc-aPecg" name="other-describe" required></textarea>
-
-
-</text-area>
-  <text-field><label for="webc-n_Mbr">[redacted]</label>
-<input id="webc-n_Mbr" type="password" name="redacted" required>
-
-
-</text-field>
-  <div class="hidden">
-    <label>
-      Don’t fill this out if you’re human: <input name="bot-field">
-    </label>
-  </div>
-
-  <div class="actions">
-    <button type="submit">Submit</button>
-    or
-    [ <a href="/redacted/">redacted</a> ]
-  </div>
-</form>
-
-
-</secret-form></p>
-<p><small>
-* No
-</small></p>
 </main>
     <side-bar class="wkkr09anp"><aside>
   <h2>Inside NSA4.US</h2>

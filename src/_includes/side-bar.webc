@@ -1,8 +1,8 @@
 <aside>
   <h2>Inside NSA4.US</h2>
   <p>
-    Learn more about <br>
-    <strong>What We Do</strong>
+    Want to learn more about
+    <strong>What We Do</strong>?
   </p>
   <ul>
     <li>Don't Worry About It</li>
@@ -20,31 +20,32 @@
     <li>Bad All Around</li>
     <li>Hiding Things</li>
     <li>Quiet Quitter</li>
-    <li>Show Us The Binder</li>
+    <li>What’s In The Binder?</li>
   </ul>
 </aside>
 
 <aside>
   <h2>What The Fuck?</h2>
   <p>
-    You live in a police
+    The US is a police
     surveillance state.
     But don't worry,
     there's also
     <strong>Corporate Surveillance</strong>
   </p>
   <ul>
-    <li><a href="https://business-business.business">Capitalism</a></li>
+    <li>Own <a href="https://business-business.business">Capital</a></li>
     <li>No Bathroom Break</li>
     <li>Wage Theft</li>
-    <li>You Might Also Like <strong>AI</strong></li>
+    <li>You Might Also Like: <strong>AI</strong></li>
   </ul>
 </aside>
 
 <aside class="woman">
   <h2>She's Back</h2>
   <p>
-    Now she's <br>
+    This is Kimberly.
+    She's
     <strong>Contemplating Treason</strong>.
   </p>
   <ul>
@@ -54,11 +55,12 @@
   </ul>
 </aside>
 
-<aside>
+<aside class="kids">
   <h2>Kids Page!</h2>
   <p>
     America's
     <strong>CryptoKids</strong>
+    (circa 2013).
   </p>
   <ul>
     <li>Download Flash Player</li>
@@ -75,16 +77,62 @@
   </p>
   <ul>
     <li>And Smile</li>
-    <li>Clutching The Papers</li>
+    <li>Clutching Stolen Secrets</li>
     <li>Terrified</li>
+    <li>Or Dissociating</li>
   </ul>
 </aside>
 
+<aside>
+  <h2>Agenda (Trans)</h2>
+  <p>
+    Pronouns are
+    <strong>Only The Start</strong>
+  </p>
+  <ul>
+    <li>Hormone Replacement</li>
+    <li>Bodily Autonomy</li>
+    <li>No State</li>
+    <li>Anarchist Revolution</li>
+    <li>Looking Cute</li>
+  </ul>
+</aside>
+
+<aside class="woman">
+  <h2>Fear Is</h2>
+  <p>
+    The mind killer,
+    <strong>The Little Death</strong>.
+  </p>
+  <ul>
+    <li>That's a Quote</li>
+    <li>Science Fiction</li>
+    <li>Big Worms</li>
+    <li>Kimberly's Favorite Book</li>
+  </ul>
+</aside>
+
+<aside>
+  <h2>Patriot Actions</h2>
+  <p>
+    Reject carceral power and
+    <strong>Abolish Prisons</strong>
+  </p>
+  <ul>
+    <li>This Project Started</li>
+    <li>In 2013 For Reasons</li>
+    <li>See Also Ben Grosser</li>
+    <li>He Made <a href="https://bengrosser.com/projects/scaremail/">Scare Mail</a></li>
+  </ul>
+</aside>
+
+
 <style>
   side-bar {
+    align-content: start;
     display: grid;
     gap: var(--gap);
-    align-content: start;
+    grid-template-columns: repeat(auto-fit, minmax(min(10em, 100%), 1fr));
     text-shadow: 1px 1px 0 white;
   }
 </style>
@@ -105,8 +153,17 @@
     background-repeat: no-repeat;
   }
 
+  .kids {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+  }
+
   li {
-    background: white;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0 0.25lh,
+      white 0.25lh 0.7lh,
+      transparent 0.7lh 1lh
+    );
     max-inline-size: max-content;
   }
 
@@ -121,5 +178,9 @@
     text-align: center;
     padding-block-end: 6px;
     margin: unset;
+
+    + p {
+      text-wrap: pretty;
+    }
   }
 </style>

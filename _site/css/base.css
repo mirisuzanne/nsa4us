@@ -55,16 +55,36 @@
     padding: var(--gap);
   }
 
+  .h1,
   h1, h2, h3 {
     color: var(--title);
     font-family: var(--title-font);
     line-height: 1;
     margin-block: 1rlh 0;
+    text-wrap: balance;
   }
 
-  h1 { font-size: var(--text-xlarge); }
-  h2 { font-size: var(--text-large); }
+  h1, h2 { font-size: var(--text-large); }
+  .h1 { font-size: var(--text-xlarge); }
   h3 { font-size: var(--text-normal); }
+
+  a:any-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--green);
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.2em;
+  }
+
+  a:focus,
+  a:hover,
+  a:active {
+    text-decoration-style: wavy;
+  }
+
+  small {
+    font-size: var(--text-small);
+  }
 }
 
 @layer reset {
@@ -89,5 +109,9 @@
   textarea,
   select {
     font: inherit;
+  }
+
+  p:empty {
+    display: none;
   }
 }

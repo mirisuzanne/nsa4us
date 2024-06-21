@@ -18,13 +18,10 @@
     <style @raw="getBundle('css')" webc:keep></style>
   </head>
   <body>
-    <site-header></site-header>
-    <main @raw="content"></main>
+    <site-header :@url="this.page.url"></site-header>
+    <main @html="content"></main>
     <side-bar></side-bar>
-
-    <footer>
-      <p>Defending Our Nation [eagle] Securing Your Secrets</p>
-    </footer>
+    <site-footer></site-footer>
 
     <script
       @raw="getBundle('js')"
@@ -37,22 +34,32 @@
   body {
     display: grid;
     grid-template:
-      'h h h h' auto
-      '. m a .' 1fr
-      '. f f .' auto
-      / 1fr minmax(min-content, 30em) fit-content(15em) 1fr
+      'h' auto
+      'm' 1fr
+      'a' auto
+      'f' auto
+      / minmax(0, 1fr)
     ;
     gap: var(--gap);
+
+    @media (width > 60em) {
+      grid-template:
+        'h h h h' auto
+        '. m a .' 1fr
+        '. f f .' auto
+        / 1fr minmax(min-content, 30em) minmax(min-content, 15em) 1fr
+      ;
+    }
   }
 
   site-header { grid-area: h; }
   main { grid-area: m; }
   side-bar { grid-area: a; }
-  footer { grid-area: f; }
+  site-footer { grid-area: f; }
 
   main {
     text-shadow: 1px 1px 2px var(--canvas);
-    padding: var(--gap);
+    padding-block: var(--gap);
 
     > :first-child {
       margin-block-start: unset;

@@ -1,5 +1,6 @@
 <header>
-  <h1>NSA<b>4</b>.US</h1>
+  <h1 webc:if="this.url === '/'" class="h1">NSA<b>4</b>.US</h1>
+  <a webc:else href="/" class="h1">NSA<b>4</b>.US</a>
   <p class="tagline">“If you think something, say something”</p>
   <svg-eagle style="fill: var(--green)"></svg-eagle>
 </header>
@@ -30,6 +31,7 @@
     animations stolen from https://www.xanthir.com
     and then updated slightly
   */
+
   @keyframes text-blur {
     0%, 50%, 90%, 100% { filter: blur(0px); }
     60%, 80% { filter: blur(2px); }
@@ -60,15 +62,19 @@
     grid-template: 'h e' auto 't e' auto / minmax(80%, 1fr) minmax(14em, 30em);
   }
 
-  h1, .tagline { margin: unset; }
+  .h1, .tagline { margin: unset; }
 
-  h1 {
+  .h1 {
     align-self: end;
     font-weight: 900;
+    color: var(--green);
+    text-decoration: none;
   }
 
   b, svg {
-    animation: text-blur 4s infinite, text-blink 11s infinite;
+    animation:
+      text-blur 4s infinite,
+      text-blink 11s infinite;
   }
 
   svg {

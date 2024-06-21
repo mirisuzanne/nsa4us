@@ -1,0 +1,41 @@
+<footer>
+  <div class="outro">
+    <strong>
+      <del>Defending</del> Our Nation</strong>
+    <pos-eagle></pos-eagle>
+    <strong>
+      <del>Securing</del> Your Secrets</strong>
+  </div>
+  <p>Copyright © 2024 [ <a href="https://miriamsuzanne.com">REDACTED</a> ]</p>
+</footer>
+
+<style>
+  site-footer {
+    display: grid;
+    margin-block: var(--gap);
+  }
+
+  .outro {
+    align-items: center;
+    border-block: thick double var(--green);
+    display: grid;
+    gap: 1em var(--gap);
+    justify-content: safe center;
+
+    @media (width > 35em) {
+      grid-template-columns: auto 10em auto;
+    }
+
+    svg {
+      block-size: auto;
+      fill: currentColor;
+      inline-size: auto;
+      margin-block: -1em;
+    }
+
+    strong {
+      font-family: var(--title-font);
+      text-align: center;
+    }
+  }
+</style>

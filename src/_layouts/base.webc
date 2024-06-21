@@ -10,6 +10,8 @@
     <link webc:keep rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link webc:keep href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link webc:keep href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link webc:keep href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Redacted&display=swap" rel="stylesheet">
+    <link webc:if="this.redacted" webc:keep href="https://fonts.googleapis.com/css2?family=Redacted&display=swap" rel="stylesheet">
 
     <link rel="stylesheet"
       webc:keep

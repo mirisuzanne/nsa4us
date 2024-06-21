@@ -1,3 +1,7 @@
+---
+redacted: true
+---
+
 I wasn't sure what to put here,
 so I pasted my _2011_ artist manifesto.
 Maybe, at some point,
@@ -21,22 +25,14 @@ So that is what I like. Narrative that is full of holes and questions. Bits borr
 
 <style>
   main {
-    text-decoration: underline;
-    text-decoration-thickness: 1.2ex;
-    text-underline-offset: -1ex;
-    text-decoration-skip-ink: none;
+    font-family: "Redacted", system-ui;
 
     p {
-      text-shadow: none;
+      background: none !important;
     }
 
     em {
-      display: inline-block;
-      text-decoration: underline;
-      text-decoration-color: black;
-      text-decoration-thickness: inherit;
-      text-underline-offset: inherit;
-      text-decoration-skip-ink: inherit;
+      font-family: var(--body-font);
     }
   }
 </style>

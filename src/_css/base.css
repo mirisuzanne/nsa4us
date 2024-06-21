@@ -56,17 +56,21 @@
   }
 
   .h1,
-  h1, h2, h3 {
+  h1, h2, h3, h4 {
     color: var(--title);
     font-family: var(--title-font);
     line-height: 1;
-    margin-block: 1rlh 0;
+    margin: unset;
     text-wrap: balance;
+
+    &:not(:first-child) {
+      margin-block-start: 1rlh;
+    }
   }
 
   h1, h2 { font-size: var(--text-large); }
   .h1 { font-size: var(--text-xlarge); }
-  h3 { font-size: var(--text-normal); }
+  h3, h4 { font-size: var(--text-normal); }
 
   a:any-link {
     color: inherit;
@@ -76,10 +80,33 @@
     text-underline-offset: 0.2em;
   }
 
-  a:focus,
+  a:focus-visible,
   a:hover,
   a:active {
     text-decoration-style: wavy;
+  }
+
+  button {
+    background-color: var(--green);
+    color: var(--canvas);
+    font-family: var(--title-font);
+    padding: 0 1em;
+
+    &:focus-visible,
+    &:hover,
+    &:active {
+      font-style: italic;
+      outline-color: var(--green);
+    }
+  }
+
+  :focus-visible {
+    outline: medium dashed;
+    outline-offset: 2px;
+  }
+
+  [method="dialog"] {
+    margin-block-start: var(--gap);
   }
 
   small {
@@ -102,6 +129,7 @@
   img,
   svg {
     max-inline-size: 100%;
+    block-size: auto;
   }
 
   input,
@@ -111,7 +139,16 @@
     font: inherit;
   }
 
+  [aria-expanded=true] {
+    box-shadow: 0 0 3em var(--green);
+  }
+
   p:empty {
     display: none;
+  }
+
+  dialog {
+    background: var(--canvas);
+    color: var(--text);
   }
 }

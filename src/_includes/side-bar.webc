@@ -5,7 +5,7 @@
     <strong>What We Do</strong>?
   </p>
   <ul>
-    <li>Don't Worry About It</li>
+    <li>Don’t Worry About It</li>
     <li>Are You Hiding Something?</li>
     <li>Trust Us</li>
   </ul>
@@ -29,8 +29,8 @@
   <p>
     The US is a police
     surveillance state.
-    But don't worry,
-    there's also
+    But don’t worry,
+    there’s also
     <strong>Corporate Surveillance</strong>
   </p>
   <ul>
@@ -42,15 +42,15 @@
 </aside>
 
 <aside class="woman">
-  <h2>She's Back</h2>
+  <h2>She’s Back</h2>
   <p>
     This is Kimberly.
-    She's
+    She’s
     <strong>Contemplating Treason</strong>.
   </p>
   <ul>
     <li>Leak The Documents</li>
-    <li>It's The Right Thing To Do</li>
+    <li>It’s The Right Thing To Do</li>
     <li>Trans Agenda</li>
   </ul>
 </aside>
@@ -58,16 +58,28 @@
 <aside class="kids">
   <h2>Kids Page!</h2>
   <p>
-    America's
-    <strong>CryptoKids</strong>
+    America’s <strong>CryptoKids</strong>
     (circa 2013).
   </p>
   <ul>
     <li>Download Flash Player</li>
-    <li>Enter Flash Site</li>
+    <li>Enter <button
+      aria-controls="kids"
+      aria-expanded="false"
+    >Flash Site</button></li>
     <li>Enter Text-Only Site</li>
   </ul>
 </aside>
+
+<dialog id="kids">
+  <h3>This is Real, I’m Sorry</h3>
+  <a href="https://web.archive.org/web/20130521164719/http://www.nsa.gov/kids/index.htm">
+    <img src="kids.jpg" alt="">
+  </a>
+  <form method="dialog">
+    <button autofocus>No</button>
+  </form>
+</dialog>
 
 <aside class="woman">
   <h2>Look</h2>
@@ -105,17 +117,17 @@
     <strong>The Little Death</strong>.
   </p>
   <ul>
-    <li>That's a Quote</li>
+    <li>That’s a Quote</li>
     <li>Science Fiction</li>
     <li>Big Worms</li>
-    <li>Kimberly's Favorite Book</li>
+    <li>Kimberly’s Favorite Book</li>
   </ul>
 </aside>
 
 <aside>
-  <h2>Patriot Actions</h2>
+  <h2>Just Say No</h2>
   <p>
-    Reject carceral power and
+    To carceral state power, and
     <strong>Abolish Prisons</strong>
   </p>
   <ul>
@@ -127,7 +139,7 @@
 </aside>
 
 <aside class="woman">
-  <h2>GoodBye</h2>
+  <h2>Patriots</h2>
   <p>
     Kimberly wants to
     <strong>Let You Know</strong>
@@ -161,7 +173,6 @@
     display: grid;
     gap: var(--gap);
     grid-template-columns: repeat(auto-fit, minmax(min(10em, 100%), 1fr));
-    text-shadow: 1px 1px 0 white;
   }
 </style>
 
@@ -172,6 +183,7 @@
     color: var(--blue);
     color-scheme: light;
     padding: var(--gap);
+    text-shadow: 1px 1px 0 white;
   }
 
   .woman {

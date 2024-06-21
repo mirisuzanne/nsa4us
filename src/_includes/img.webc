@@ -1,4 +1,4 @@
 <img
   webc:is="eleventy-image"
-  :src="this.src"
+  :src="this.src.includes('://') ? this.src : `./src/_images/${this.src}`"
   :alt="this.alt" />

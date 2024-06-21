@@ -21,4 +21,4 @@ but it’s need-to-know
 (and you don’t).
 </small></p>
 
-<p><small>*** [[REDACTED](/redacted/)]</small></p>
+<p><small>*** [<a href="/redacted/">REDACTED</a>]</small></p>

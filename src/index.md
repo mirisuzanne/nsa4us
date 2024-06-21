@@ -27,5 +27,5 @@ and send ~~me~~ <ins>the NSA</ins> your secrets directly!
 <secret-form></secret-form>
 
 <p><small>
-* No
+* God’s law (The Bible)
 </small></p>
